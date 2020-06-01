@@ -16,7 +16,9 @@ library(tidyverse);library(telegram.bot)
 
 currentScript <- "Fieldbot.R"
 botmaster <- Sys.getenv("botmaster_token") # The botmaster_token 
-updater <- Updater(token = bot_token("Nat40_Fieldnote"));module.list=c()
+updater <- Updater(token = bot_token("Nat40_Fieldbot"));module.list=c()
+
+
 
 
 # static variables for modules####
@@ -30,8 +32,10 @@ source("modules/update.R")
 source("modules/start.R")
 source("modules/ping.R")
 source("modules/kill.R")
+#source("modules/verbose.R")
+source("modules/maintenance.R")
 
 source("modules/unknown.R")
 
-updater1 <- updater +update_handler+ start_handler+kill_handler+ping_handler
+updater1 <- updater +update_handler+ start_handler+kill_handler+ping_handler+maintenance_handler
 updater1$start_polling(verbose=T)
