@@ -8,13 +8,7 @@ update <- function(bot, update){
       updater$stop_polling()
       bot$getUpdates(offset = update$update_id + 1)
       source(currentScript)
-      # for(i in module.list){
-      #   source(paste0("modules/",i,".R"),local=F)
-      #   cat("Updated module", i,"\n")
-      # }
-      
-      # updater1 <- updater +update_handler+ start_handler+kill_handler+ping_handler+media_handler
-      # updater1$start_polling(verbose=T)
+
     }else{
       bot$sendMessage(chat_id = update$message$chat_id,
                       text = "Not authorized!")
