@@ -24,7 +24,7 @@ updater <- Updater(token = bot_token("Nat40_Fieldbot"));module.list=c()
 # static variables for modules####
 
 # static variables ####
-welcome_message <-  sprintf("")
+welcome_message <-  sprintf("Hi, I am Fieldbot")
 
 
 # loading modules ####
