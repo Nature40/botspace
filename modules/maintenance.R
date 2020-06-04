@@ -25,12 +25,12 @@ bbx <- function(bot, update, args){
       encode = "json"
     )
     
-    res1 <- jsonlite::fromJSON(rawToChar(res$content))
+    # res1 <- jsonlite::fromJSON(rawToChar(res$content))
     
     
-    poll_id <- res1$result$poll$id
+    # poll_id <- res1$result$poll$id
     # str(res)
-    update <- jsonlite::fromJSON(sprintf("%s/getUpdates", base_url))
+    # update <- jsonlite::fromJSON(sprintf("%s/getUpdates", base_url))
     # result$poll$question
     
   },

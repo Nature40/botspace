@@ -32,10 +32,13 @@ source("modules/update.R")
 source("modules/start.R")
 source("modules/ping.R")
 source("modules/kill.R")
-#source("modules/verbose.R")
+source("modules/verbose.R")
+source("modules/PollHandler.R")
 source("modules/maintenance.R")
 
 source("modules/unknown.R")
 
-updater1 <- updater +update_handler+ start_handler+kill_handler+ping_handler+maintenance_handler
+updater1 <- updater +update_handler+ 
+  start_handler+kill_handler+
+  ping_handler+bbx_handler+poll_handler +verbose_handler
 updater1$start_polling(verbose=T)
