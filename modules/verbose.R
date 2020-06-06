@@ -16,3 +16,4 @@ verbose <- function(bot, update){
   
 }
 verbose_handler <- MessageHandler(verbose)
+verbose_handler2 <- PollHandler(verbose)
