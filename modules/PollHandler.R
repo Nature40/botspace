@@ -15,27 +15,16 @@ PollHandlerClass <- R6::R6Class("PollHandler",
                                      
                                      # Methods
                                      is_allowed_update = function(update) {
-                                       !is.null(update$poll_result)
+                                       TRUE
+                                      
                                      },
                                      
                                      # This method is called to determine if an update should be handled by
                                      # this handler instance.
                                      check_update = function(update) {
                                        if (is.Update(update) && self$is_allowed_update(update)) {
-                                         if (is.null(self$filters)) {
                                            res <- TRUE
                                          } else {
-                                           message <- update$effective_message()
-                                           
-                                           if (inherits(self$filters, "list")) {
-                                             res <- any(unlist(lapply(self$filters, function(func) {
-                                               func(message)
-                                             })))
-                                           } else {
-                                             res <- self$filters(message)
-                                           }
-                                         }
-                                       } else {
                                          res <- FALSE
                                        }
                                        
